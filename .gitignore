@@ -1,0 +1,13 @@
+# 抓取的课程内容含版权材料，默认不入库（仅本地保存）
+materials/chapter-*/
+legislation/*.pdf
+notes/scrape-log.md
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+.vscode/
+
+# 临时文件
+*.tmp
+~$*
