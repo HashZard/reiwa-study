@@ -8,7 +8,7 @@ description: 引用格式与出处标注规范。任何时候需要引用课程�
 ## 格式
 | 资料类型 | 格式 | 示例 |
 |---------|------|------|
-| 课程材料 | [Chapter X, "小节标题", §编号] | [Chapter 3, "Trust Accounts", §2.1] |
+| 课程材料 | [Module X, "Workbook N — 标题", §编号] | [Module 8, "Workbook 1 — Legislation in Real Estate", §2.1] |
 | 法规 Act | 法规全名 (WA) s 条款号 | Real Estate and Business Agents Act 1978 (WA) s 26 |
 | 条例 Regulations | 全名 (WA) reg 编号 | Real Estate and Business Agents (General) Regulations 1979 (WA) reg 6 |
 | 行为准则 | Code of Conduct for Agents and Sales Representatives 2016 (WA) cl 编号 | ... cl 12 |
@@ -21,7 +21,7 @@ description: 引用格式与出处标注规范。任何时候需要引用课程�
    说明这段原文为什么支持该论点
 2. 每个论点至少一个出处；同时有课程材料和法规依据时两者都列
 3. 引用课程材料时必须附本地文件路径，方便我核对，
-   例：`materials/chapter-03/content/03-02-trust-account-requirements.md`
+   例：`materials/module-08-compliance/workbooks/08-wb1-legislation-in-real-estate.md`
 4. **无法定位出处 → 明确写「未找到依据」**；不得推测条款号、
    不得从记忆中"回忆"条款内容
 5. 法规引用前先核对 `legislation/` 中的官方版本；本地没有该法规时，

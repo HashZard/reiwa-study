@@ -1,13 +1,22 @@
-# 抓取的课程内容含版权材料，默认不入库（仅本地保存）
-materials/chapter-*/
-legislation/*.pdf
+# === 版权内容：抓取的课程资料默认不入库（仅本地供个人学习）===
+# 注意目录名是 module-XX（旧写法 chapter-* 不匹配，会误提交 WB/Assessment，已修正）
+materials/module-*/
 notes/scrape-log.md
 
-# 系统与编辑器
+# === 法规原始二进制源文件（大文件，可从官方源重新下载）===
+# 转换后的 *.md 与 *.index.md 保留入库（文本、可搜索、Crown copyright 可复制）
+legislation/original/
+legislation/*.pdf
+legislation/*.docx
+
+# === Playwright 抓取的临时快照 / 控制台日志 ===
+.playwright-mcp/
+
+# === 系统与编辑器 ===
 .DS_Store
 Thumbs.db
 .vscode/
 
-# 临时文件
+# === 临时文件 ===
 *.tmp
 ~$*
