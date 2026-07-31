@@ -28,3 +28,29 @@ description: 引用格式与出处标注规范。任何时候需要引用课程�
    先提示补齐（触发 material-audit），不要凭训练记忆引用
 6. 课程材料与法规现行版本不一致时：指出差异，作业以课程材料为准，
    同时注明法规现状
+7. 引用必须定位到可复查的位置：课程材料写 module/workbook/section + 本地路径；
+   法规写完整名称、jurisdiction、section/subsection（或 regulation/rule）+ 本地路径
+8. 引文只证明它实际表达的内容；引用前后至少阅读一个完整段落，核对主体、行为、
+   条件、例外和后果，禁止用仅含相同关键词但语义不同的段落支持结论
+9. `assignments/`、`notes/`、AI 摘要和搜索结果摘要不是事实来源，只可作为检索线索
+10. 涉及现行法律、处罚、金额、时限或版本时，必须同时记录：
+    - 本地法规的 compilation/as-at 日期
+    - 官方发布页 URL
+    - 本次核对日期 `checked_at: YYYY-MM-DD`
+    若官方版本更新，先更新本地 Markdown/index/manifest，再引用
+11. 法律后果必须精确标注性质与主体：offence / civil penalty / remedy / disciplinary
+    action；individual / body corporate；maximum / fixed。不得把不同条款的处罚互相套用
+12. 课程与现行法规冲突时按题目要求处理：题目明确要求 current/latest，现行法规优先；
+    其他课程 Assessment 保留课程预期答案，并另列“现行法规核验”，不得静默选择其一
+
+## 引用记录模板
+
+```markdown
+- Claim / 主张：
+- Course evidence / 课程依据：<少于 25 词原句> — [Module..., §...]
+  Local: `materials/...`
+- Legal evidence / 法规依据：<少于 25 词原句> — Full Act name (WA/Cth) s ...
+  Local: `legislation/...`
+- Version: compilation/as-at ...; checked_at: YYYY-MM-DD; Official: https://...
+- Support / 支持关系：说明原文如何支持该主张及适用条件
+```

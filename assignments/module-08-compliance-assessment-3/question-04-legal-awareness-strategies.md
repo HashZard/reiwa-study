@@ -24,6 +24,14 @@ Your responses should be clear, practical, and show how you will maintain ongoin
 
 答案要实用、清楚，并体现你会持续维护法律意识。
 
+## Evidence status / 依据状态
+
+- Quality status: **BLOCKED**
+- Assessment source: 未存入 `materials/module-08-compliance/assessments/`
+- Required Workbooks: WB1 ⬜ / WB2 ⬜ / WB3 ✅
+- Reason: Assessment 正式原题和完整 Workbook 集合未入库，以下内容是历史研究草稿。
+- Use restriction: 不得作为可提交答案；补齐资料后须重新核对五个表格字段和课程依据。
+
 ## Answer / 作答
 
 ### 1. Accessing legislation / 获取法规

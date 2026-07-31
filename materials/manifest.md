@@ -7,7 +7,8 @@
 **课程**：Unrestricted Registration Online（CPP41419）
 **平台**：aXcelerate — `reiwa.app.axcelerate.com/learner/course/class/31414/plan`
 **平台总进度**：7/15 模块完成 · 课程周期 2026-03-31 ~ 2027-09-16
-**最近盘点**：2026-07-11（已抓取 Module 8 **Workbook 3** 正文；WB1·2、各 Assessment 题目仍未抓取）
+**最近盘点**：2026-07-31（状态一致性复核：Module 8 **Workbook 3** 正文已有；WB1·2、
+各 Assessment 正式题目仍未抓取。`assignments/` 中的 Q2–Q5 题干/旧稿不计为来源入库。）
 
 ## 模块状态总览
 
@@ -23,7 +24,7 @@
 | 5 | Optional support videos | ✅ | — | — | — |
 | 6 | CPPREP4001 Prepare for Professional Practice | ✅ | ⬜ | ⬜ A1·A2 | ❌ |
 | 7 | Marketing cluster（CPPREP4004 / CPPREP4102） | ✅ | ⬜ WB1-3 | ⬜ A1-3 | ❌ |
-| 8 | Compliance cluster（CPPREP4002 / CPPREP4003） | 🔵 | ⬜ WB1·2 / ✅ **WB3** | ⬜ A1·A2 ✅ / **A3 🔵 进行中** | ⚠️ 待A3题目 |
+| 8 | Compliance cluster（CPPREP4002 / CPPREP4003） | 🔵 | ⬜ WB1·2 / ✅ **WB3** | ⬜ A1–A3（Q2–Q5 仅见旧稿） | ❌ |
 | 9 | Appraise and list cluster (Sales) | 🔒 | ⬜ WB1-5 | ⬜ A1-5 | ❌ |
 | 10 | Buy and Sell Cluster | 🔒 | ⬜ WB1-3 | ⬜ A1-3 | ❌ |
 | 11 | CPPREP4121 Establish landlord relationships | 🔒 | ⬜ WB | ⬜ A1 | ❌ |
@@ -33,7 +34,12 @@
 | 15 | Next steps | 🔒 | — | — | — |
 
 **当前重点**：Module 8 Compliance Cluster – Assessment 3（*Professional Communication and Ethical Practice*）——
-以 Phantom Realty 员工身份，说明 REBA Act 与 Australian Consumer Law (ACL) 的目的与影响、识别违规与处罚、并说明如何保持合规。答题依据为本模块 Workbook 1–3（平台已完成，**本地尚未抓取**）。
+以 Phantom Realty 员工身份，说明 REBA Act 与 Australian Consumer Law (ACL) 的目的与影响、识别违规与处罚、并说明如何保持合规。答题依据为本模块 Workbook 1–3；
+本地仅有 WB3，且 Assessment 3 正式题目未存入 `materials/`，因此准确性质量门为 **BLOCKED**。
+
+> `assignments/module-08-compliance-assessment-3/` 下现有 Q2–Q5 是资料不全时形成的旧稿，
+> 只能作为检索线索，不能作为题目来源或事实依据。补齐 WB1、WB2 和 A3 原题并完成独立
+> 核验前，不得标为 `VERIFIED-DRAFT`。
 
 ## 资料明细
 

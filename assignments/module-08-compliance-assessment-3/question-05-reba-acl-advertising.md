@@ -10,6 +10,14 @@ Explain how the REBA Act and the Australian Consumer Law (ACL) work together in 
 
 说明 REBA Act 和 Australian Consumer Law (ACL) 如何共同监管房地产广告，并解释为什么 agents 必须同时遵守两者。
 
+## Evidence status / 依据状态
+
+- Quality status: **BLOCKED**
+- Assessment source: 未存入 `materials/module-08-compliance/assessments/`
+- Required Workbooks: WB1 ⬜ / WB2 ⬜ / WB3 ✅
+- Reason: Assessment 正式原题及完整 Workbook 集合未入库，以下内容是历史研究草稿。
+- Use restriction: 不得作为可提交答案；补齐资料后须重新核验 REBA Act、Code 与 ACL 的分工和条款。
+
 ## Answer / 作答
 
 ### 1. How the REBA Act and ACL work together / 两部法律如何共同作用
@@ -67,7 +75,7 @@ Complying with both laws helps protect consumers, sellers, buyers and the agency
 - `legislation/wa-reba-act-1978.md` - REBA Act Part VII allows disciplinary action for conduct that breaches other laws and prejudices parties to a transaction.
 - `legislation/cth-australian-consumer-law.md` - ACL ss 18 and 30 apply to misleading conduct and false or misleading representations in trade or commerce.
 
-## Suggested Submission Version / 可提交英文整合版
+## Historical Draft Only / 历史草稿（不可提交）
 
 The REBA Act and the ACL work together by regulating different parts of real estate advertising. The REBA Act and the Code of Conduct set professional rules for agents and sales representatives. They require advertising to be authorised, consistent with the client’s instructions, linked to the correct agency, and supported by reasonable checks of material facts.
 

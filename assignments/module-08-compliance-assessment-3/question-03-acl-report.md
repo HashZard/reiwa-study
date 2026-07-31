@@ -12,6 +12,15 @@ Address each section clearly and provide your answers in your own words.
 
 本题要求完成内部报告的第二部分，主题是 Australian Consumer Law (ACL)。ACL 位于 Competition and Consumer Act 2010 (Cth) 的 Schedule 2 中。需要按表格字段说明：Act 全称、立法目的、两个关键组成部分、两个违规例子及相关 section、对应罚款金额，以及查阅现行 Act 的证据链接。
 
+## Evidence status / 依据状态
+
+- Quality status: **BLOCKED**
+- Assessment source: 未存入 `materials/module-08-compliance/assessments/`
+- Required Workbooks: WB1 ⬜ / WB2 ⬜ / WB3 ✅
+- Legislation status: 本地 ACL 为 2025 compilation，草稿声称的较新版本尚未按新流程重新入库核验
+- Reason: 来源及版本门未通过，以下内容是历史研究草稿。
+- Use restriction: 不得作为可提交答案；补齐资料并更新法规后须重新核验全部条款和处罚。
+
 ## Answer / 作答
 
 ### 1. Full title of Act / 法规全称
