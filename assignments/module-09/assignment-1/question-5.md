@@ -22,20 +22,20 @@ Following the inspection and conversation with Robert Cagiva, complete two vendo
 
 | Client | Contact details | Property/ies | Property details | Follow-up/Action |
 |---|---|---|---|---|
-| Robert Cagiva | 32 Silverstone Street, Fantasy Glen | 7 Phillip Island Drive, Fantasy Glen | Sale appraisal. Robert plans to sell so he and his wife can begin travelling. | Prepare and send the sale CMA and appraisal report. Follow up about sale and listing next steps. |
-| Robert Cagiva | 32 Silverstone Street, Fantasy Glen | 2/9 Storybrook Place | Rental appraisal. Robert plans to lease after the renovations are complete. | Prepare and send the rental CMA and appraisal report. Follow up after renovations are complete to discuss leasing next steps. |
+| Robert Cagiva | Mobile: 0422 446 688; Email: cagivar@classic.com; Address: 32 Silverstone Street, Fantasy Glen | 7 Phillip Island Drive, Fantasy Glen | Sale appraisal. Robert plans to sell so he and his wife can begin travelling. | Prepare and send the sale CMA and appraisal report. Follow up about sale and listing next steps. |
+| Robert Cagiva | Mobile: 0422 446 688; Email: cagivar@classic.com; Address: 32 Silverstone Street, Fantasy Glen | 2/9 Storybrook Place | Rental appraisal. Robert plans to lease after the renovations are complete. | Prepare and send the rental CMA and appraisal report. Follow up after renovations are complete to discuss leasing next steps. |
 
 ## 依据来源
 
-课程 Certificate of Title 确认 Robert Cagiva 和地址 `32 Silverstone Street, Fantasy Glen`。题目提供两套房的 sale/lease intentions 和 renovation timeframe。Database procedure 要求记录 enquiry source/date 及 actions taken。课程未提供电话、电邮或具体装修日期，因此未添加。
+Phantom Realty Database v1 的 CRM 样例行确认 Robert Cagiva 的手机 `0422 446 688`、电邮 `cagivar@classic.com` 和地址 `32 Silverstone St, Fantasy Glen`。Certificate of Title 也显示该地址；题目提供两套房的 sale/lease intentions 和 renovation timeframe。Database procedure 要求记录 enquiry source/date 及 actions taken。
 
 ### 中文解析
 
-两行分别记录 sale 和 lease。Robert 的地址来自课程 Certificate of Title；第二套房用题目给出的 “after the renovations are complete” 作为 follow-up trigger，不虚构具体日期、电话或电邮。
+两行分别记录 sale 和 lease。电话、电邮和客户地址来自本地 Database v1；7 Phillip Island Drive 的产权地址由 Certificate of Title 交叉核对。第二套房用题目给出的 “after the renovations are complete” 作为 follow-up trigger，不虚构具体日期。
 
 ## Quality record / 质量记录
 
 - Requirement coverage: contact detail, two properties/outcomes, timeframes/preferences and actions — **4/4 SUPPORTED**.
-- Independent check: [x] Reopened Assessment Question 5; [x] checked the Database procedure and the 7 Phillip Island Drive title; [x] confirmed no unsupported personal data was added.
+- Independent check: [x] Reopened Assessment Question 5; [x] checked the local Database v1 PDF and its Markdown conversion; [x] checked the 7 Phillip Island Drive title; [x] confirmed no unsupported personal data was added.
 
 以上为草稿和依据整理，请自行理解、改写后提交。
