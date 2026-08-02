@@ -51,7 +51,7 @@ description: 进入 REIWA aXcelerate 获取课程目录、Workbook、Assessment 
 
 - Workbook → `materials/module-XX/workbooks/`
 - Assessment → `materials/module-XX/assessments/`
-- 附件和外部资料 → `materials/module-XX/resources/`
+- 附件和外部资料 → `materials/module-XX/resources/`；Module 4 Phantom Realty 例外使用 `materials/module-04-phantom-realty/attachments/raw/`（原始文件）和 `attachments/md/`（转换文本），由 source-aligned 章节索引。
 - 保留标题层级、列表、表格、关键链接、图片 alt/说明；去除导航、页眉页脚和重复按钮文字
 - 大文件同时创建 `<name>.index.md`，记录章节/条款到行号的定位
 

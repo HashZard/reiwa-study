@@ -22,14 +22,16 @@ $ARGUMENTS
 3. 保留题目原文，并提供中文题意说明
 4. 先建立要求矩阵（action verb、数量、字段、角色、jurisdiction/版本、限定词），再建立
    逐评分点证据矩阵；只有 `SUPPORTED` 或已说明的 `CONFLICT` 才能进入答案
-5. 每个作答项都使用中英文对照：
-   - Question / 题目要求
+5. 每个 Question 文件都使用中英文对照：
+   - English 原题与中文题意
    - Answer in English / 英文答案草稿
    - 中文解析
    - 依据来源
 6. 展示检索到的依据原文位置，再给答案草稿
-7. 默认把完整回答保存到 `assignments/` 下对应的 Markdown 文件中，
-   不需要用户另行要求；若已有对应文件则更新/追加，不新建重复文件
+7. 默认把完整回答保存到固定目录 `assignments/module-XX/assignment-Y/question-Z.md`，
+   一题一文件；不需要用户另行要求。若已有对应文件则更新，不新建重复版本。
+   每题必须采用 `.claude/templates/assessment-answer.md` 的双语结构：
+   English 原题与中文题意、Evidence status、Answer / 作答、英文答案、中文解析、依据来源、Quality record。
 8. 引用格式遵循 citation skill；现行法规、金额和时限必须记录官方 URL、版本和 checked_at
 9. 保存为 `DRAFT-UNVERIFIED` 后，AI 重新打开原题、Workbook 和法规执行独立逐条引用、
    数字/版本与题目覆盖核验；全部通过后才能晋级为 `VERIFIED-DRAFT`

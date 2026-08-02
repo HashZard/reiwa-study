@@ -58,7 +58,7 @@ Playwright 或其他网页插件。公开资料可以使用 Google/网络搜索�
 │   └── agents/             researcher（检索子agent）
 ├── materials/              课程资料（manifest.md 为状态权威）
 ├── legislation/            WA 官方法规
-├── assignments/            作业（每个一个子文件夹）
+├── assignments/            作业答案（module-XX/assignment-Y/question-Z.md，一题一文件）
 └── notes/                  模块总结与笔记
 ```
 

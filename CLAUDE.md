@@ -35,7 +35,35 @@
 - 学习模块内部分两类项目，**这是核心工作模型**：
   - **Workbook**（平台内类型标为 *Lesson*）—— 学习正文，是答题依据
   - **Assessment**（类型标为 *Summative Assessment*）—— 考核题
-  - **Assessment 必须基于对应 Workbook 的内容作答**
+  - **Assessment 默认基于同编号 Workbook 的内容作答**（WB1 → A1、WB2 → A2，依此类推）；
+    只有原题/Workbook 明确交叉引用其他资料，或同编号 Workbook 对某评分点没有直接依据时，
+    才把额外 Workbook、附件或法规列为该题的必需来源
+- **Phantom Realty / Fantasy Glen 是跨课程共用的虚构工作场景**。题目出现该机构、地区、客户、
+  房产、内部政策、流程、表格或数据库时，先查
+  `materials/module-04-phantom-realty/overview.md`
+  定位精确课程资源；再获取并引用该原始资源。它不替代同编号 Workbook，也不允许从其他虚构
+  客户或房产推断事实。
+- **Module 4 本地知识库规则**：重构后的目录必须以 aXcelerate Module 4 原页面层级为主，
+  不能用答题主题重新发明一级分类。`overview.md` 只负责导航、关键词反向索引和原文层级映射；
+  `source-register.md` 只负责 resource ID、原始 URL、本地路径和抓取状态；两者都不是独立事实来源。
+  每个课程附件原则上单独保存为一个可全文检索的 Markdown 文件，并保留原始标题、resource ID、
+  source URL、页面所属节、相关人物、地址和抓取状态。
+- Module 4 的 source-aligned 一级映射固定为：
+  `01-agency-and-fantasy-glen`（Fantasy Glen profile、marketing brochure、organisational chart、
+  culture and values、business objectives）、`02-team-profiles`、`03-agency-documents`、
+  `04-policies`、`05-operational-procedures`、`06-running-the-agency`、`07-clients`、
+  `08-database`、`09-properties`。原页面没有的一级概念不得加入；仅可在原页面分类下建立子目录。
+- 关键词路由规则：题目首次出现任何人物名、客户名、虚构机构名、地区名、房产地址，或出现
+  `CRM`、`vendor profile`、`database`、`policy`、`procedure`、`form`、`title`、`CMA`、
+  `sale`、`lease` 等情景词时，先检索 Module 4 的 `overview.md`、source-aligned 目录和
+  `source-register.md`；找到精确原始资料后再引用。若只在 Assessment 场景中出现的事实，
+  必须标为 Assessment scenario，不得反向写成 Phantom Realty 附件事实。
+- 事实边界：人物与房产资料只能来自对应课程原件；不能因姓名、地址或相似题目自行补电话、
+  电邮、日期、偏好或其他个人资料。若原件未提供，记录为“课程材料中未找到”。
+- 抓取状态必须区分 `complete`、`partial`、`complete_index` 和 `pending_capture`；有链接不等于
+  正文已入库。每次新增或迁移资料后立即更新 `materials/manifest.md` 与 `materials/index.md`。
+  旧目录和旧登记册只有在逐项核对、链接替换和状态更新完成，并获得用户确认后，才可清除；
+  清除后不得再把旧路径当作事实来源。
 - 能力单元代码形如 CPPREP4001/4002/4003/4004/4102/4121 等
 
 ## 语言风格
@@ -61,6 +89,10 @@
   **不重复抓取网站、不重复下载法规**；只有 manifest 显示缺失（⬜/🙋）才去获取
 - **抓取或下载任何新资料后，立即更新 `manifest.md` 与 `index.md`**（状态 + 本地路径 + 一句话摘要），
   否则下次会重复劳动。manifest 是唯一状态权威
+- **法规即时补齐**：任一已读取的 Workbook、Assessment 或其附件一旦明确点名某部 Act /
+  Regulations / Code、条款号，或将具体法律义务、处罚、时限归因于该法规，而本地未收录时，
+  立即按 `material-audit` 补入 `legislation/`；不等待同模块其余 Workbook、Assessment
+  或完整章节。泛称“合法/合规/伦理”而未给出可识别法规来源时，不得凭常识猜测新增法规。
 - 读大文件（如完整法规）先看配套 `*.index.md` 定位条款行号，只读取相关段落，
   不要整篇加载
 - 回答作业题：遵循 `assignment-qa` skill 的流程
@@ -68,8 +100,8 @@
 - 抓取培训网站：遵循 `site-scraper` skill；优先复用可用的已登录浏览器，已完成 Lesson
   使用 Results 视图非破坏读取
 - 开始新模块前：先执行资料盘点（`material-audit` skill）
-- 答某个 Assessment 前：确认对应模块的 Workbook 正文已抓取入库，
-  答案依据优先取自该模块 Workbook
+- 答某个 Assessment 前：先确认同编号 Workbook 正文已抓取入库；答案优先取自这一对
+  Workbook–Assessment。仅在原题/课程明确交叉引用，或评分点无直接依据时，才补查额外来源
 
 ## 准确性质量门（所有 Assessment 强制执行）
 
@@ -79,8 +111,11 @@
 ### Gate 1 — 来源与资料完整性
 - Assessment 原题必须保存于对应模块的 `materials/module-XX/assessments/`；
   `assignments/` 是 AI 输出目录，里面复制的题干不能替代 Assessment 原始来源
-- 对应 Workbook 正文必须在 `materials/` 中完整入库；仅有部分 Workbook、摘要、
-  作业旧稿或法规，均不视为资料齐全
+- 与该 Assessment 同编号的 Workbook 正文必须完整入库；仅有部分 Workbook、摘要、
+  作业旧稿或法规，均不视为资料齐全。额外 Workbook 只在原题/课程明确交叉引用，或该评分点
+  在同编号 Workbook 中找不到直接依据时，才成为必需来源
+- 已入库的法规可在 Workbook 尚未全部抓取时即时补充；但这不解除 Assessment 答题所需的
+  Workbook、Assessment 原题及其他引用资料的完整性门槛
 - 先以 `manifest.md` 判断状态，再核对实际文件；二者不一致时以“未通过”处理并
   修正 manifest/index，不能选择较乐观的一边
 - 记录题目来源、Workbook 清单、法规版本日期；资料不全时停止实质作答
@@ -117,7 +152,7 @@
 - 答题前先查 `materials/manifest.md` 确认该模块资料状态为齐全；
   若有缺失，先提示我补齐，不要基于不完整资料作答
 - 区分「课程材料的说法」和「你的补充解释」，不得混淆
-- 作业答案只提供草稿和依据，最终提交版本由我本人改写
+- 作业答案提供完整英文答案草稿和依据；最终提交版本由我本人理解、改写后提交
 - 抓取网站时：只抓我已登录账号可见的内容，控制速度，
   仅存本地供个人学习使用
 - 不得把 `assignments/` 中的旧答案、自行总结或模型先前输出当作事实依据
@@ -138,7 +173,8 @@
   `legislation/original/` 保存官方下载原始文件（docx/pdf，大文件，`.gitignore` 中不入库）
   - 大文件（如 ACL 全文）附带 `<name>.index.md` 结构索引（条款→行号），先查索引再定位读取
   - 转换后的 `*.md` / `*.index.md` 入库；原始二进制在 `original/` 不入库（可从官方源重下）
-- `assignments/` 作业，每个作业一个子文件夹
+- `assignments/` 作业答案；固定采用 `assignments/module-XX/assignment-Y/question-Z.md` 一题一文件，
+  例如 `assignments/module-09/assignment-1/question-1.md`。旧目录可保留，但新答案以固定格式为准。
 - `notes/` 模块总结与学习笔记
 
 ## 命名规范

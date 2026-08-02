@@ -9,9 +9,13 @@ description: 回答 REIWA 培训作业题的标准分析流程。当用户提出
 先查 `materials/manifest.md` 和 `materials/index.md`，再核对实际文件。必须同时满足：
 
 1. Assessment 原题已保存到对应模块的 `materials/module-XX/assessments/`
-2. 对应 Assessment 所依据的全部 Workbook 正文已保存到 `workbooks/`
+2. 与 Assessment 同编号的 Workbook 正文已保存到 `workbooks/`（默认配对：WB1 → A1、WB2 → A2）
 3. 题目明确引用的附件、表格或法规已入库
 4. manifest 状态、本地路径和实际文件一致
+
+不要因为同模块其他 Workbook 尚未抓取而自动阻塞该 Assessment。只有在原题/Workbook 明确
+交叉引用，或某评分点在同编号 Workbook 中找不到直接依据时，才把额外 Workbook 列入
+`Required Workbooks` 并补齐；找不到直接依据的评分点仍为 `UNSUPPORTED`，不得猜测。
 
 `assignments/` 是 AI 输出目录。里面复制的题干、旧答案或免责声明不能替代正式
 Assessment 原题，也不能作为证据。
@@ -45,9 +49,9 @@ Assessment 原题，也不能作为证据。
 
 ## 第 2 步：检索
 1. 查 `materials/index.md` 定位相关文件
-2. **优先**读该模块 `workbooks/` 中的相关 Workbook**原文**
-   （题目严格按本模块 Workbook 出，措辞相近段落大概率就是考点）
-3. 查 `resources/` 中被引用的外部资料
+2. **优先**读与该 Assessment 同编号的 Workbook**原文**
+   （题目默认按同编号 Workbook 出，措辞相近段落大概率就是考点）
+3. 查 `resources/` 中被引用的外部资料；Module 4 Phantom Realty 先查 `overview.md`/`source-register.md`，再查 `attachments/md/` 和 `attachments/raw/`
 4. 涉及法规 → 读 `legislation/` 中的条款原文
 5. 旧作业只可提供关键词，禁止引用旧答案作为依据
 6. 当前 AI 环境支持并行/子 agent 时，可把纯检索任务交给 researcher；否则由主 AI
@@ -76,8 +80,9 @@ Assessment 原题，也不能作为证据。
 **A. 发现材料缺失**（题目/Workbook 引用了本地没有的资料，或某法规条款
 本地 `legislation/` 未收录，或该模块 Workbook 正文其实没入库）：
 - 停下当前作答，明确告诉用户缺什么、是哪道题/哪段引用暴露的
-- 触发 `material-audit`（即 `/audit`）流程补齐；能自动下载的（法规、政府
-  指南）按其规则下载，平台内容按 `site-scraper` 抓取，其余列人工清单
+- 缺失项为已明确触发的法规时，立刻触发 `material-audit` 的「法规即时触发」流程，
+  只补该单项法规，不等待同模块其余 Workbook 或 Assessment；平台内容仍按
+  `site-scraper` 抓取，其余资料按 `material-audit` 分类处理
 - 补齐并更新 `manifest.md` / `index.md` 后再回到本题继续
 - 若用户选择先不补，将质量状态改为 `BLOCKED`，在研究记录中标
   「课程材料中未找到」；停止实质作答，不得推测填充
@@ -99,45 +104,49 @@ Assessment 截图或用户复制的原题属于来源材料：先保存到模块
 
 ## 第 3 步：回答结构
 默认使用「Assessment 双语解析格式」。除非用户明确要求只给简短答案，
-否则所有 assessment / assignment 答案都按以下结构输出。
+否则所有 assessment / assignment 答案都按以下结构输出；用户要求“完整答案”时，必须实际给出英文答案，不能只交付依据矩阵。
 新文件从 `.claude/templates/assessment-answer.md` 创建，避免遗漏质量状态和核验记录。
+
+答案采用一题一文件的固定目录：`assignments/module-XX/assignment-Y/question-Z.md`。
+例如 Module 9 Assessment 1 使用 `assignments/module-09/assignment-1/question-1.md`。
+旧的 cluster 命名目录可以保留为历史文件，但新答案以固定格式为规范路径。
 
 ### 3.1 总体结构
 ```
-## Question / 题目
+# Module X — Assignment Y — Question Z
+
+## Question / 题目 Z
 
 ### English
-（保留题目英文原文；如题目很长，可保留关键题干和字段）
+（保留该 Question 的完整英文原文、字段、输入框和数量要求）
 
 ### 中文题意
 （用中文说明题目要回答什么、角色/场景是什么、评分点是什么）
 
 ## Evidence status / 依据状态
-- Quality status: VERIFIED-DRAFT
+- Quality status: DRAFT-UNVERIFIED
 - Assessment source: （本地路径）
-- Required Workbooks: （逐项列路径与状态）
+- Primary Workbook: （同编号 Workbook 路径与状态）
+- Additional course sources: （仅列题目明确需要的附件/额外 Workbook）
 - Legislation checked_at: YYYY-MM-DD（如适用）
 - Requirement coverage: X/X
 
 ## Answer / 作答
 
-### 1. （按题目字段、表格行或评分点命名）
-
-**Question / 题目要求**
-（保留该字段/小题的英文要求 + 中文解释）
-
-**Answer in English / 英文答案草稿**
+### Answer in English / 英文答案草稿
 （正式、简洁、可填入 assessment 的英文答案）
 
-**中文解析**
+### 中文解析
 （解释为什么这样答；指出题目考点、易错点、与场景的关系）
 
-**依据来源**
+## 依据来源
 （课程材料出处 + 法规条款 + 本地文件路径/官方链接；格式遵循 citation skill）
 ```
 
-「要求矩阵」和「证据矩阵」属于核验内容，默认保存在答案文件的
+每个 Question 使用一个文件；「要求矩阵」和「证据矩阵」属于核验内容，默认保存在答案文件的
 `Quality record / 质量记录` 小节中，不放进用户最终粘贴的英文答案框。
+每题文件必须同时保留 English 原题、中文题意、Evidence status、Answer / 作答、
+英文答案草稿、中文解析、依据来源和 Quality record。
 
 ### 3.2 表格类 Assessment
 若题目截图或原题是表格输入框（例如每行一个问题、每格填一段话）：
@@ -189,13 +198,13 @@ Assessment 截图或用户复制的原题属于来源材料：先保存到模块
 
 ## 第 5 步：默认保存到 assignments
 每次回答 assessment / assignment 题目时，默认把完整回答同步保存到
-`assignments/` 下对应的 Markdown 文件中，不需要用户单独要求。
+`assignments/module-XX/assignment-Y/question-Z.md`，不需要用户单独要求。
 
 保存规则：
 - 若用户给了题目文件路径：优先更新该路径对应的答案文件，或在同目录创建清晰命名的答案文件
 - 若用户只给截图或文字题目：根据模块、cluster、assessment 编号和 question 编号推断路径
-- 推荐路径格式：
-  `assignments/module-XX-{cluster}-assessment-Y/question-Z-{short-slug}.md`
+- 固定路径格式：
+  `assignments/module-XX/assignment-Y/question-Z.md`
 - 若对应目录不存在，先创建目录
 - 若已有同一 question 文件，更新该文件；不要为同一题重复新建多个版本
 - 文件内容必须包含完整「Assessment 双语解析格式」：题目、英文答案、中文解析、依据来源、备注

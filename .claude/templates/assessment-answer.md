@@ -1,72 +1,68 @@
-# <Module / Assessment title>
+# Module <X> — Assignment <Y> — Question <Z>
 
-## Question / 题目
+## Question / 题目 <Z>
 
 ### English
 
-<Assessment 原题>
+<Copy the complete Assessment question, including instructions, table labels, input fields and quantity requirements.>
 
 ### 中文题意
 
-<角色、action verb、数量、字段、限定词和评分点>
+<翻译题目，说明角色、action verb、数量、字段、限定词和评分点。>
 
 ## Evidence status / 依据状态
 
 - Quality status: **DRAFT-UNVERIFIED**
-- Assessment source: `materials/module-XX/assessments/<file>.md`
-- Required Workbooks: `<逐项本地路径与状态>`
-- Legislation version: `<compilation/as-at>`
-- checked_at: YYYY-MM-DD
-- Requirement coverage: 0/0
+- Assessment source: `materials/module-XX/assessments/<assessment-file>.md`
+- Primary Workbook: `materials/module-XX/workbooks/<matching-workbook-file>.md` (<status>)
+- Additional course sources: `<only sources expressly required by the question>`
+- Legislation version: `<N/A or compilation/as-at>`
+- checked_at: `YYYY-MM-DD`
+- Requirement coverage: `0/0`
 
 ## Answer / 作答
 
-### 1. <题目字段或评分点>
+### Answer in English / 英文答案草稿
 
-**Question / 题目要求**
+<完整、简洁、可填入平台输入框的英文答案。只写证据已支持的内容；表格题保留原题行/列结构。>
 
-<英文要求 + 中文解释>
+### 中文解析
 
-**Answer in English / 英文答案草稿**
+<解释答案如何对应题目场景和评分点；不要把中文解释粘贴进英文提交框。>
 
-<只写证据已支持的内容>
+## 依据来源
 
-**中文解析**
-
-<解释规则如何适用于题目场景>
-
-**依据来源**
-
-- Claim / 主张：<本段主张>
-- Course evidence / 课程依据：“<少于 25 个英文词>” — [Module X, "Workbook N — title", §X.X]
-  Local: `materials/module-XX/workbooks/<file>.md`
-- Legal evidence / 法规依据：“<少于 25 个英文词>” — <Act full name> (WA/Cth) s X
-  Local: `legislation/<file>.md`
-- Version: <compilation/as-at>; checked_at: YYYY-MM-DD; Official: https://...
-- Support / 支持关系：<主体、行为、条件、例外和结论如何匹配>
+- Claim / 主张：<本段可核查主张>
+  - Course evidence / 课程依据：`<少于 25 个英文词的关键原句>` — [Module X, “Workbook N — title”, §X.X]
+  - Local: `materials/module-XX/workbooks/<file>.md`
+  - Legal evidence / 法规依据：`<少于 25 个英文词的关键原句>` — <Act full name> (WA/Cth) s X（如适用）
+  - Local: `legislation/<file>.md`（如适用）
+  - Version: `<compilation/as-at>`; checked_at: `YYYY-MM-DD`; Official: `<URL>`（如适用）
+  - Support / 支持关系：<说明主体、行为、条件、例外和结论如何匹配>
 
 ## Quality record / 质量记录
 
 ### Requirement matrix / 要求矩阵
 
 | ID | Action verb | 对象 | 数量/字段 | 角色/场景 | Jurisdiction/版本 | 限定词 | 覆盖状态 |
-|----|-------------|------|-----------|-----------|----------------------|--------|----------|
-| R1 | | | | | | | |
+|---|---|---|---|---|---|---|---|
+| R1 | <list/explain/select/etc.> | <object> | <quantity/field> | <role/scenario> | <jurisdiction/version> | <must/within/etc.> | SUPPORTED / PARTIAL / CONFLICT / UNSUPPORTED |
 
 ### Evidence matrix / 证据矩阵
 
 | ID | Workbook 原文与定位 | 法规原文与条款 | 适用条件/关系 | 状态 |
-|----|---------------------|----------------|---------------|------|
-| R1 | | | | SUPPORTED |
+|---|---|---|---|---|
+| R1 | <local path + section> | <local path + section, or N/A> | <why it supports the answer> | SUPPORTED |
 
 ### Independent verification / 独立核验
 
-- [ ] 重新打开 Assessment 原题并检查字段/数量/action verb
-- [ ] 重新打开每个 Workbook 引文并检查上下文
-- [ ] 重新打开每个法规条款并检查主体、条件、例外和后果
-- [ ] 核对所有条款号、金额、时限、日期和版本
-- [ ] 不依赖答案中的摘录，重新打开全部来源完成交叉核验
-- [ ] 全部核验通过后将状态晋级为 VERIFIED-DRAFT
+- [ ] 重新打开 Assessment 原题并检查题目、字段、数量和 action verb
+- [ ] 重新打开同编号 Workbook，检查每条课程引文的完整上下文
+- [ ] 重新打开额外课程附件（如题目明确需要），检查版本和完整度
+- [ ] 重新打开每个法规条款，检查主体、条件、例外和法律后果（如适用）
+- [ ] 核对所有条款号、金额、时限、日期和版本（如适用）
+- [ ] 检查英文答案没有超出已支持事实，没有虚构个人资料
+- [ ] 全部核验通过后，才将状态改为 **VERIFIED-DRAFT**
 
 ## Notes / 备注
 
