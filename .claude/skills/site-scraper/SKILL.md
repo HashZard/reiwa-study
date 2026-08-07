@@ -44,7 +44,14 @@ description: 进入 REIWA aXcelerate 获取课程目录、Workbook、Assessment 
 
 - 已完成的 Lesson 优先进入 `Results` 视图，不点击 `Take This Lesson Again`，避免新建 attempt
 - 按页面导航逐项读取正文，包括 section、子页、knowledge check、表格、链接和图片说明
-- Assessment 必须保留 instruction、question、row label、input prompt、数量要求和附件
+- Assessment 抓取先打开 **Item List**，记录页面内全部项目的名称和顺序；再按清单逐项读取
+  Overview/instructions 与题目，保留 instruction、question、row label、input prompt、数量要求和附件。
+- Item List 出现 **`Student declaration of authenticity`** 时：**不打开、不读取、不复制其内容，也不
+  填写或提交任何选项**；直接跳到下一项目。在本地 Assessment 文件开头以一句抓取范围说明
+  记录该页面已跳过即可；不要将其作为题目或元数据项目保存。
+- Assessment 的完整性按「本次允许抓取范围内的 Item List 项目」核对。例如 Item List 有 Overview、
+  Student declaration of authenticity、Question 1–6 时，预期/已抓取均为 7（Overview + 6 题），
+  并单列 1 个 skipped item；不要因为未读声明页而标记 `partial`。
 - 每页操作保持正常速度；反复失败的页面记录到 `notes/scrape-log.md` 后继续其他项目
 
 ### 3. 格式化与保存
@@ -88,7 +95,9 @@ expected_items: <页面导航或题目总数>
 保存后由 AI 重新打开本地文件，与页面结构逐项对照：
 
 - Workbook：首条/末条、导航总数、section、表格、knowledge checks、链接和附件
-- Assessment：question 总数、所有小题、row/input prompt、instruction 和附件
+- Assessment：以 Item List 为准，复核所有未跳过项目、所有小题、row/input prompt、instruction
+  和附件；若有 `Student declaration of authenticity`，确认该页未读取且未影响允许范围内项目的
+  完整性计数
 - 本地文件：非空、无工具错误文本、元数据齐全、Markdown 可搜索
 
 `captured_items` 与 `expected_items` 不一致，或任何内容无法确认时标 `partial`，不得标 ✅。

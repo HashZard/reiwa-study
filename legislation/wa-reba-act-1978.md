@@ -3,6 +3,9 @@ title: Real Estate and Business Agents Act 1978
 jurisdiction: Western Australia
 source: legislation.wa.gov.au
 source_file: legislation/original/wa-reba-act-1978.docx
+version: 07-n0-00
+currency_start: 2022-07-01
+checked_at: 2026-08-07
 converted_from: docx
 converted_on: 2026-07-11
 citation_style: Real Estate and Business Agents Act 1978 (WA) s X

@@ -3,6 +3,9 @@ title: Real Estate and Business Agents and Sales Representatives Code of Conduct
 jurisdiction: Western Australia
 source: legislation.wa.gov.au
 source_file: legislation/original/wa-reba-code-of-conduct-2016.docx
+version: 00-a0-01
+currency_start: 2016-10-05
+checked_at: 2026-08-07
 converted_from: docx
 converted_on: 2026-07-11
 citation_style: Real Estate and Business Agents and Sales Representatives Code of Conduct 2016 (WA) r X
